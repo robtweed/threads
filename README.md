@@ -23,13 +23,16 @@ the many benefits of synchronous coding could be acheived without the risk of bl
 It consists of four components:
 
 - a master Node server process that is 100% asynchronous and non-blocking
-- a pool of child Node processes that only ever handle a single action/request at a time
+- a pool of child Node processes that **only ever handle a single action/request at a time**
 - a queue of pending actions/requests
 - a queue processor that attempts to allocate requests/actions on the queue to available child Node processes
 
 The child processes persist throughout the lifetime of the master Node server process, so there is no setup/teardown 
-overhead or delay when handling requests/actions: the child processes, if available, are instantaneously available for 
-messaging by the master process.
+overhead or delay when handling requests/actions: the child processes that are flagged as being in the 
+*available process pool* are instantaneously available for use by the master process.
+
+It's the fact that the Child Node Processes only ever handle a single request at a time that is what makes it 
+possible for them to support synchronous coding, since they don't need to worry about blocking anyone else.
 
 Note: *threads* is completely event-driven with no polling overheads.
 
