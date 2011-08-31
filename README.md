@@ -31,7 +31,7 @@ The child processes persist throughout the lifetime of the master Node server pr
 overhead or delay when handling requests/actions: the child processes that are flagged as being in the 
 *available process pool* are instantaneously available for use by the master process.
 
-It's the fact that the Child Node Processes only ever handle a single request at a time that is what makes it 
+It's the fact that the Child Node Processes only ever handle a single request at a time that makes it 
 possible for them to support synchronous coding, since they don't need to worry about blocking anyone else.
 
 Note: *threads* is completely event-driven with no polling overheads.
