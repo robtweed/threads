@@ -113,7 +113,7 @@ Then just add the last line exactly as shown above.  That's it!  *threads* will 
 You define this in the master Node process.  Here's an example that will package up the resonses from the child Processes
 as web pages:
 
-      var handler = function(requestObj, results) {
+      var responseHandler = function(requestObj, results) {
         //console.log("This is the response handler: ");
         //console.log("** action: " + JSON.stringify(requestObj.action));
         //console.log("results = " + JSON.stringify(results));
@@ -133,6 +133,10 @@ as web pages:
 
 - requestObj will be picked up automatically by *threads* and is the original requestObj you placed on the queue
 - results is the returnValue you returned from your childProcesses.
+
+You add a reference to this handler whenever you add a request/action to the *threads* queue, eg:
+
+       threads.addToQueue(requestObj, responseHandler);
 
 ## That's it!
 
