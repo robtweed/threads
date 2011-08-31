@@ -1,0 +1,19 @@
+{ 
+ "name": "threads",
+ "description": "Multi-thread manager for Node.js (0.5.x and later)",
+ "version": "0.0.1",
+ "author": "Rob Tweed <rtweed@mgateway.com>",
+ "repository": { 
+   "type": "git",
+    "url": "git://github.com/robtweed/threads.git"
+  },
+  "bugs": {
+    "web": "http://github.com/robtweed/ewdGateway/issues" 
+  },
+  "os": [ "linux", "darwin" ],
+  "directories": { "lib": "./lib/" },
+  "main": "./lib/threads",
+  "engines": { "node" : ">=0.5.4" },
+  "dependencies" : {},
+  "licenses": [ "MIT" ]
+}
