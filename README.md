@@ -14,7 +14,7 @@ Twitter: @rtweed
 Note: *threads* requires Node.js version 0.5.x or later, as it makes use of its child Node process
 capability
 	   
-##  threads
+##  What is threads?
 
 *threads* is a simple module for enabling and managing a scalable but high-performance multi-threaded 
 environment in Node.js.  The primary incentive for writing it was to create a hybrid environment where 
@@ -28,9 +28,10 @@ It consists of four components:
 - a queue processor that attempts to allocate requests/actions on the queue to available child Node processes
 
 The child processes persist throughout the lifetime of the master Node server process, so there is no setup/teardown 
-overhead when handling requests/actions.
+overhead or delay when handling requests/actions: the child processes, if available, are instantaneously available for 
+messaging by the master process.
 
-Note: *threads* is completely event-driven.
+Note: *threads* is completely event-driven with no polling overheads.
 
 You have complete control over the behaviour and configuration of *threads*.  You can:
 
