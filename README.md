@@ -3,7 +3,7 @@
 Simple multi-thread manager for Node.js
 
 Rob Tweed <rtweed@mgateway.com>  
-25 August 2011, M/Gateway Developments Ltd [http://www.mgateway.com](http://www.mgateway.com)  
+30 August 2011, M/Gateway Developments Ltd [http://www.mgateway.com](http://www.mgateway.com)  
 
 Twitter: @rtweed
 
@@ -153,9 +153,10 @@ the bargain!
 - Find the simple worked example in the */examples* directory of this repository.
 
 - Copy *threadsChildProcess.js* to the same directory/path used by npm when you installed the threads module, 
-   eg *~/node/node_modules/threads/lib*
+   eg *~/node/node_modules/threads/lib* (Note: you can change the name and location of the childProcess file by 
+   using the *childProcessPath* startup parameter for *threads*)
 
-- Copy *webthreads.js* to the directory/path when you normally run your Node.js applications, eg *~/node*
+- Copy *webthreads.js* to the directory/path where you normally run your Node.js applications, eg *~/node*
 
 - Start the example: **node webthreads.js**
 
