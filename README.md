@@ -88,6 +88,16 @@ The parameters that you can specify for the *threads* *start()* function are as 
 - trace = true if you want to get a detailed activity trace to the Node.js console (default = true)
 - silentStart = true if you don't want any message to the console when *threads* starts (default = false)
 
+For example:
+
+      var threads = require('threads');
+	  
+	  var params = {poolSize: 20, childProcessPath: '/home/user/node/myChildProc.js', trace: false};
+      threads.start(params, function() {
+        console.log("threads started!!!");
+		// start processing!
+      });
+
 ##  Defining a child Node process
 
 The child process should be designed to handle any instance of your action/requests that get sent to it by the master
