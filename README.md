@@ -46,8 +46,20 @@ You have complete control over the behaviour and configuration of *threads*.  Yo
 Clearly, the larger the pool of Node.js threads, the less likely it is that the request/action queue will build up.  On the 
 other hand, each child Node process uses about 10Mb memory according to the Node.js documentation.  Additionally, the quicker 
 your child process can handle a request, the sooner it will become available again to the pool to handle a queued request/action.
-  
-##  Using threads
+
+##  Benefits of the threads module
+
+The threads module addresses many of the key potential drawbacks of Node.js, including:
+
+- allowing safe use of synchronous logic with Node.js, avoiding the need for cumbersome, non-intuitive and difficult to maintain 
+  nested callback structures.  Synchronous logic won't block the main server thread
+- allowing the safe use of in-process synchronous database APIs, as exemplified by the [Globals](http://glogalsdb.org) database
+- providing protection to your main Node server process by isolating it from problems that might occur when handling particular 
+  requests/actions.
+- distributing load across multiple Node processes, allowing use of multiple-core CPUs.
+- providing a highly scalable architecture that can be easily tailored to suit your traffic and processing demands.
+
+##  Using the threads module
 
 Node.js 0.5.x must be installed
 
